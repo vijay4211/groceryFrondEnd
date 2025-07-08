@@ -14,7 +14,7 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <h2>AddProduct Page</h2>
+      <h2>Add Product Page</h2>
       <div className="py-10 flex flex-col justify-between bg-white">
         <form
           onSubmit={handleSubmit}
