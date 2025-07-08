@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const SellerLayout = () => {
-  return (
-    <div>SellerLayout</div>
-  )
-}
+  return <div>SellerLayout Page</div>;
+};
 
-export default SellerLayout
+export default SellerLayout;
