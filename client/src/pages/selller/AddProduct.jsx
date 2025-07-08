@@ -1,19 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+import { assets, categories } from "../../assets/assets";
 
 const AddProduct = () => {
+  const [files, setFiles] = useState([]);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [offerPrice, setOfferPrice] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
   return (
     <div>
       <h2>AddProduct Page</h2>
       <div className="py-10 flex flex-col justify-between bg-white">
-        <form className="md:p-10 p-4 space-y-5 max-w-lg">
+        <form
+          onSubmit={handleSubmit}
+          className="md:p-10 p-4 space-y-5 max-w-lg"
+        >
           <div>
             <p className="text-base font-medium">Product Image</p>
             <div className="flex flex-wrap items-center gap-3 mt-2">
+              {/* Array(4) = 4 input box */}
               {Array(4)
                 .fill("")
                 .map((_, index) => (
                   <label key={index} htmlFor={`image${index}`}>
                     <input
+                      onChange={(e) => {
+                        const updatedFiles = [...files];
+                        updatedFiles[index] = e.target.files[0];
+                        setFiles(updatedFiles);
+                      }}
                       accept="image/*"
                       type="file"
                       id={`image${index}`}
@@ -21,7 +41,12 @@ const AddProduct = () => {
                     />
                     <img
                       className="max-w-24 cursor-pointer"
-                      src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/e-commerce/uploadArea.png"
+                      src={
+                        // file hai to URL generate karo
+                        files[index]
+                          ? URL.createObjectURL(files[index])
+                          : assets.upload_area
+                      }
                       alt="uploadArea"
                       width={100}
                       height={100}
@@ -35,6 +60,7 @@ const AddProduct = () => {
               Product Name
             </label>
             <input
+              onChange={(e) => setName(e.target.value)}
               id="product-name"
               type="text"
               placeholder="Type here"
@@ -50,6 +76,7 @@ const AddProduct = () => {
               Product Description
             </label>
             <textarea
+              onChange={(e) => setDescription(e.target.value)}
               id="product-description"
               rows={4}
               className="outline-none md:py-2.5 py-2 px-3 rounded border border-gray-500/40 resize-none"
@@ -61,17 +88,14 @@ const AddProduct = () => {
               Category
             </label>
             <select
+              onChange={(e) => setCategory(e.target.value)}
               id="category"
               className="outline-none md:py-2.5 py-2 px-3 rounded border border-gray-500/40"
             >
               <option value="">Select Category</option>
-              {[
-                { name: "Electronics" },
-                { name: "Clothing" },
-                { name: "Accessories" },
-              ].map((item, index) => (
-                <option key={index} value={item.name}>
-                  {item.name}
+              {categories.map((category, index) => (
+                <option key={index} value={category.path}>
+                  {category.path}
                 </option>
               ))}
             </select>
@@ -82,6 +106,7 @@ const AddProduct = () => {
                 Product Price
               </label>
               <input
+                onChange={(e) => setPrice(e.target.value)}
                 id="product-price"
                 type="number"
                 placeholder="0"
@@ -94,6 +119,9 @@ const AddProduct = () => {
                 Offer Price
               </label>
               <input
+                onChange={(e) => {
+                  setOfferPrice(e.target.value);
+                }}
                 id="offer-price"
                 type="number"
                 placeholder="0"
