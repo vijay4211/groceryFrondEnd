@@ -1,0 +1,54 @@
+
+
+
+---------App.jsx
+import React from "react";
+
+import { Routes, Route } from "react-router-dom";
+
+const App = () => {
+  return (
+    <div>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
+    </div>
+  );
+};
+
+export default App;
+
+
+--------main.jsx
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
+import { BrowserRouter } from "react-router-dom";
+
+createRoot(document.getElementById("root")).render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
+
+
+-----Check Route Path On Browser:
+
+http://localhost:5173/
+  Home
+
+http://localhost:5173/products
+  Product
+
+http://localhost:5173/product/6
+  ProductDetails
+
+http://localhost:5173/cart
+  Cart
+
+
+
+

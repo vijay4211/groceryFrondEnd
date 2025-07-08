@@ -1,0 +1,34 @@
+
+
+1. google fonts poppins - Google Fonts
+2. Outfit
+3. Get Font
+4. Get Embed Code
+5. Web
+6. @import
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+</style>
+
+7. Outfit: CSS class for a variable style
+.outfit-<uniquifier> {
+  font-family: "Outfit", sans-serif;  //get font-family and use in index.css
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+
+
+
+File Name - Cart
+rafce - react arrow function component export
+
+import React from "react";
+
+const Cart = () => {
+  return <div>Cart</div>;
+};
+
+export default Cart;

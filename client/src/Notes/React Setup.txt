@@ -1,0 +1,21 @@
+
+Steps:
+
+1. npm create vite@latest - (y)
+2. Project name: client
+3. Select a framwork: React
+4. Select a variant: JavaScript
+5. cd client
+6. client > npm install
+7. npm run dev
+
+
+-----Start React Project Using below command
+npm run dev
+
+Local: http:localhost:5173/
+
+
+
+start server = npm run dev
+stop server = ctrl + c

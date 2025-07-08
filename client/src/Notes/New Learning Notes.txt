@@ -1,0 +1,170 @@
+
+Library - prebuildui
+
+
+---html:
+ <a href="#">Home</a>
+----react:
+ <Link to={"/"}></Link>
+
+
+
+
+
+-------------------
+src -> assets -> assets.js
+
+import profile_icon from "./profile_icon.png";
+
+export const assets = { profile_icon}
+
+
+Navbar.jsx:
+import { assets } from "../assets/assets";
+
+<img src={assets.profile_icon} alt="" className="w-10" />
+
+
+
+-----------------------------------
+ <div className="relative group">
+              <img src={assets.profile_icon} alt="" className="w-10" />
+              <ul className="hidden group-hover:block absolute top-10 right-0 bg-white shadow-md rounded-md border border-gray-200">
+                <li>My Order</li>
+                <li>Logout</li>
+              </ul>
+</div>
+
+
+-------------------------------
+onClick={(e) => e.stopPropagation()} -> form la hide honya pasun prevent karto.
+
+
+
+--------------------------------
+<div className="mt-16">
+      <p className="text-2xl font-medium md:text-3xl">Best Sellers</p>
+      <div>
+        {products
+          .filter((product) => product.inStock)
+          .slice(0, 5)
+          .map((product, index) => (
+            <ProductCard key={index} product={product} />
+          ))}
+      </div>
+    </div>
+
+    
+
+
+
+---------------------------------
+ {/* Rating */}
+          <div className="flex items-center gap-0.5">
+            {Array(5)
+              .fill("")
+              .map((_, i) => (
+                <img
+                  key={i}
+                  src={i < 4 ? assets.star_icon : assets.star_dull_icon}
+                  alt="rating"
+                  className="w-3 md:w-3.5"
+                />
+              ))}
+            <p>(4)</p>
+          </div>
+
+
+
+--------------------------------
+  const addToCart = (itemId) => {
+    let cartData = structuredClone(cartItems);
+  };
+
+
+
+---------------------------------
+Note: col-span-2
+ <div className="col-span-2"> 
+              <button
+                type="submit"
+                className="w-full bg-indigo-500 hover:indigo-600 text-white rounded-xl p-3"
+              >
+                Save Address
+              </button>
+  </div>
+
+
+--------------------------------
+Note: max-w-xs
+<div className="flex-1 flex items-center justify-center">
+          <img
+            src={assets.add_address_iamge}
+            alt="Address Illustration"
+            className="w-full max-w-xs rounded-lg shadow-md"
+          />
+</div>
+
+
+
+----------------------------------
+ <div className="flex flex-col items-end w-max"></div>
+ Note: w-max ---> jitana contain honga us contain ke hisabse width adjust hongi
+
+
+----------------------------------
+ <div className="my-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 items-center justify-center"></div>
+
+# grid-cols-1 = for mobile
+# sm:grid-cols-2 = above mobile screen size
+# md:grid-cols-4 to above screen size
+# lg:grid-cols-5 to above screen size
+
+
+
+-------------------------------
+<div className="text-3xl md:text-4xl">No Product Found</div>
+# text-3xl = for mobile screen 
+# md:3xl = md screen to above screen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          

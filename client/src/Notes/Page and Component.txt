@@ -1,0 +1,35 @@
+
+-----------pages
+1. Cart
+2. Home =   Hero + Category + BestSeller + NewsLetter
+3. MyOrder
+4. ProductCategory = ProductCard
+5. ProductDetails
+6. Products = ProductCard
+7. AddAddress
+
+
+---------component
+1. Navbar
+2. Hero
+3. Category
+4. BestSeller =  ProductCard
+5. ProductCard
+6. NewsLetter
+7. Footer
+
+
+------------App.jsx
+1. Footer
+
+
+-------------pages -> seller
+1. AddProduct
+2. SellerLayout
+3. ProductList
+4. Orders
+
+
+
+
+
