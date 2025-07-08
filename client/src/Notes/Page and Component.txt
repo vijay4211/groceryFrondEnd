@@ -19,6 +19,7 @@
 7. Footer
 
 
+
 ------------App.jsx
 1. Footer
 
@@ -30,6 +31,8 @@
 4. Orders
 
 
+--------------component -> seller
+1. SellerLogin
 
 
 
