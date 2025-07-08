@@ -25,7 +25,7 @@ const App = () => {
   const isSellerPath = useLocation().pathname.includes("seller");
 
   return (
-    <div className="text-default min-h-screen bg-red-300">
+    <div className="text-default min-h-screen border-2 border-red-800">
       {isSellerPath ? null : <Navbar />}
       {showUserLogin ? <Auth /> : null}
       <Toaster />
@@ -43,11 +43,7 @@ const App = () => {
             path="/seller"
             element={isSeller ? <SellerLayout /> : <SellerLogin />}
           >
-            <Route
-              index
-              path="add-product"
-              element={isSeller ? <AddProduct /> : null}
-            />
+            <Route index element={isSeller ? <AddProduct /> : null} />
             <Route
               path="product-list"
               element={isSeller ? <ProductList /> : null}
