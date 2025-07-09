@@ -169,6 +169,10 @@ Note: max-w-xs
                     />
 
 
+-----------------------------------------------------
+ <p>Date: {new Date(order.createdAt).toLocaleString()}</p>                    
+
+
 
 
 
